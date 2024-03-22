@@ -1,0 +1,33 @@
+
+Define el motor de la base de datos que vas a utilizar
+datasource db {
+  provider = "postgresql" // Puedes cambiar esto según la base de datos que estés utilizando
+  url      = env(" C:/Program Files/PostgreSQL/16/data") // URL de conexión a tu base de datos
+}
+
+Define el modelo para la tabla de atractivos
+model Atractivo {
+  id            Int       @id @default(autoincrement()) // ID autoincremental
+  categoria     String    // Categoria del atractivo
+  descripcion   String    // Descripcion principal
+  descripcion2  String    // Descripcion secundaria
+  dias_abiertos String    // Días abiertos
+  direccion     String    // Dirección
+  facebook      String    // Enlace de Facebook
+  fotos         String[]  // Arreglo de URLs de fotos
+  horarios      String    // Horarios de atención
+  horarios2     String    // Horarios secundarios
+  instagram     String    // Enlace de Instagram
+  isVisible     Boolean   @default(true) // Visible por defecto
+  nombre        String    // Nombre del atractivo
+  nombre2       String    // Segundo nombre del atractivo
+  popular       Boolean   @default(false) // Atractivo popular
+  precio        Float     // Precio
+  precio2       Float     // Segundo precio
+  region        String    // Región
+  tags          String[]  // Etiquetas relacionadas
+  telefono      String    // Número de teléfono
+  tripadvisor   String    // Enlace de TripAdvisor
+  ubicacion     String    // Ubicación
+  whatsapp      String    // Número de WhatsApp
+}

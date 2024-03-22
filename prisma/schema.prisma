@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") 
+}
+
+model Atractivo {
+  id            Int       @id @default(autoincrement()) // ID autoincremental
+  categoria     String?
+  descripcion   String?
+  descripcion2  String?
+  dias_abiertos String?
+  direccion     String?
+  facebook      String?
+  fotos         String[]
+  horarios      String?
+  horarios2     String?
+  instagram     String?
+  isVisible     Boolean   @default(true)
+  nombre        String?
+  nombre2       String?
+  popular       Boolean   @default(false)
+  precio        Float?
+  precio2       Float?
+  region        String?
+  tags          String[]
+  telefono      String?
+  tripadvisor   String?
+  ubicacion     String?
+  whatsapp      String?
+}
